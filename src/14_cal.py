@@ -20,5 +20,27 @@ and does the following:
 """
 
 import sys
-import calendar
+from calendar import TextCalendar
 from datetime import datetime
+
+cal = TextCalendar()
+
+def globalist_month():
+  global query_month
+  try:
+    query_month = int(sys.argv[1])
+  except:
+    query_month = datetime.today().month
+
+def globalist_year():
+  global query_year
+  try:
+    query_year = int(sys.argv[2])
+  except:
+    query_year = datetime.today().year
+    
+
+globalist_month()
+globalist_year()
+
+print(cal.prmonth(query_year, query_month))
