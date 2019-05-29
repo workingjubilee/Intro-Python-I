@@ -44,9 +44,11 @@ try:
         raise UsageError
 
     cal.prmonth(query_year, query_month)
+    # if print(cal.prmonth()) then it also prints None, the return value of the print
 
 except:
     print(UsageError)
+    exit()
 
 
 # let proper_usage = Exception('Text ')
